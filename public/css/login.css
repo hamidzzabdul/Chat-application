@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@400;500;600&family=Roboto&display=swap");
+:root {
+  --primary-font: "Poppins", serif;
+  --secondary-font: "Roboto", serif;
+  --tertiary-font: "Lato", serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    position: relative;
+    font-family: var(--primary-font);
+}
+
+.container{
+    width: 70%;
+    height: 70vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex: 1;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px 3px rgba(0,0,0,0.19);
+-webkit-box-shadow: 0px 3px 10px 3px rgba(0,0,0,0.19);
+-moz-box-shadow: 0px 3px 10px 3px rgba(0,0,0,0.19);
+}
+
+.login-photo{
+    width: 50%;
+}
+
+.hero-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 2rem;
+}
+
+.hero-section>img{
+    width: 70%;
+    object-fit: contain;
+}
+
+.hero-section>a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid black;
+    transition: .2s ease all;
+}
+
+.hero-section>a:hover{
+    color: #7b7b7b;
+}
+
+.login-wrapper,
+.signUp-wrapper {
+    width: 50%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-wrapper>.form-control,
+.signUp-wrapper>.form-control
+{
+    width: 90%;
+    height: 300px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-control>p{
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 900;
+    font-family: var(--secondary-font);
+}
+
+.username,.password{
+    width: 90%;
+    border-bottom: 1px solid #7b7b7b;
+    transition: .3s ease all;
+}
+
+.username>input,
+.password>input{
+    border: none;
+    width: 70%;
+    padding: 10px 5px;
+}
+
+
+.username>input:focus,
+.password>input:focus{
+    outline: none;
+}
+
+.forgot-password{
+    width: 113px;
+    text-decoration: none;
+    font-size: .8rem;
+    margin-right: 30px;
+    color: #000;
+}
+
+.log-in{
+    width: 205px;
+    text-decoration: none;
+    font-size: .8rem;
+    margin-right: 30px;
+    color: #000;
+}
+
+.forgot-password:hover,
+.log-in:hover
+{
+    color: #7b7b7b;
+    transition: .3s ease all;
+}
+
+.forgot-password::after,
+.log-in::after
+{
+    content: '';
+    display: block;
+    border-bottom: 1px solid #000;
+    transform: scaleX(0);
+    transition: transform 400ms ease-in-out;
+}
+
+.forgot-password:hover::after,
+.log-in:hover::after
+{
+    transform: scaleX(1);
+}
+.forgot-password::after,
+.log-in::after
+{ 
+     transform-origin:  0% 50%; 
+}
+
+button{
+    width: 40%;
+    padding: .6rem 1rem;
+    border: none;
+    margin: 0 auto;
+    background-color: #22e0ba;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: transform .3s ease-in-out;
+}
+
+button:hover{
+    transform: translateY(-4px);
+}
+
+.profile>label{
+    font-size: .8rem;
+}

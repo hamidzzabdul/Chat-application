@@ -1,0 +1,21 @@
+extends auth
+
+block content
+    .container 
+        .login-photo 
+            .hero-section
+                img(src="./assets/loginpage.jpg", alt="")
+                a.register(href="/register") Create an account
+
+        .login-wrapper 
+            form.form-control(action="#") 
+                p Login 
+                .username
+                    i.fa.fa-user.avatar 
+                    input(type="text" placeholder="Username" required)
+                .password
+                    i.fa.fa-unlock-alt  
+                    input(type="text" placeholder="Password" required)
+                a.forgot-password(href="#") Forgot password 
+                button.login Login
+        

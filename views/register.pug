@@ -1,0 +1,24 @@
+extends auth
+
+block content
+    .container 
+        .login-photo 
+            .hero-section
+                img(src="./assets/loginpage.jpg", alt="")
+                a.register(href="/login") Login
+
+        .signUp-wrapper 
+            form.form-control.form-sign-up(method="POST")
+                p Sign-Up
+                .username
+                    i.fa.fa-user.avatar 
+                    input#email(type="email" placeholder="you@example.com" required)
+                .password
+                    i.fa.fa-unlock-alt  
+                    input#password(type="password" placeholder="Password" required)
+                .password
+                    i.fa.fa-unlock-alt  
+                    input#passwordConfirm(type="password" placeholder="Retype-password" required)
+                a.log-in(href="/login") Alreade have an account! Login 
+                button.signUp-btn Sign Up
+        

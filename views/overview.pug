@@ -1,0 +1,43 @@
+extend base
+
+block content 
+    p.logout-btn
+        a(href="#") Logout  
+    .container 
+        .chatroom 
+            .current-user-container
+                .current-username 
+                    img.user-profile(src="./assets/liebe.png", alt="")
+                    .user-wrapper 
+                        p.username Abdulhamid 
+                        p.status Hello there im busy 
+                i.fa.fa-close.side-bar.fa.lg
+            .search-container 
+                input.search-bar(type="text" placeholder="search for chat")
+                i.fa.fa-search.search-icon.fa-lg 
+            .chats-wrapper 
+                each user in users
+                    .chat-user-container
+                        .current-username 
+                            img.user-profile(src=`/assets/liebe.png`, alt="")
+                            .chats 
+                                p.username=user.name
+                                p.last-msg You: hello
+                        .chat-time 
+                            p.time Just now 
+            .add +
+        .individual-chatroom 
+            .dashboard 
+                i.fa.fa-bars.hamburger.active-bars.fa-lg 
+                img.users-profile(src="./assets/liebe.png", alt="")
+                .user-name-area 
+                    p.name Abdulhamid
+                    p.time 2:58 PM
+                .peripherals 
+                    i.fa.fa-search.fa-lg
+                    i.fa.fa-ellipsis-v.fa-1g
+            .chat-texts 
+            .text-area 
+                input.message(type="text" placeholder="Type message here")    
+                .send-message   
+                    i.fa.fa-paper-plane.send
