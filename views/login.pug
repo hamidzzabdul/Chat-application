@@ -8,14 +8,14 @@ block content
                 a.register(href="/register") Create an account
 
         .login-wrapper 
-            form.form-control(action="#") 
+            form.form-control.login-form
                 p Login 
                 .username
                     i.fa.fa-user.avatar 
-                    input(type="text" placeholder="Username" required)
+                    input#email(type="text" placeholder="Username" required)
                 .password
                     i.fa.fa-unlock-alt  
-                    input(type="text" placeholder="Password" required)
+                    input#password(type="password" placeholder="Password" required)
                 a.forgot-password(href="#") Forgot password 
                 button.login Login
         

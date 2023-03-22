@@ -1,15 +1,15 @@
 extend base
 
 block content 
-    p.logout-btn
-        a(href="#") Logout  
+    p
+        a.logout-btn Logout  
     .container 
         .chatroom 
             .current-user-container
                 .current-username 
-                    img.user-profile(src="./assets/liebe.png", alt="")
+                    img.user-profile(src=`./assets/${user.photo}`, alt="")
                     .user-wrapper 
-                        p.username Abdulhamid 
+                        p.username= user.name
                         p.status Hello there im busy 
                 i.fa.fa-close.side-bar.fa.lg
             .search-container 
@@ -19,7 +19,7 @@ block content
                 each user in users
                     .chat-user-container
                         .current-username 
-                            img.user-profile(src=`/assets/liebe.png`, alt="")
+                            img.user-profile(src=`/assets/${user.photo}`, alt="")
                             .chats 
                                 p.username=user.name
                                 p.last-msg You: hello
@@ -27,17 +27,18 @@ block content
                             p.time Just now 
             .add +
         .individual-chatroom 
-            .dashboard 
-                i.fa.fa-bars.hamburger.active-bars.fa-lg 
-                img.users-profile(src="./assets/liebe.png", alt="")
-                .user-name-area 
-                    p.name Abdulhamid
-                    p.time 2:58 PM
-                .peripherals 
-                    i.fa.fa-search.fa-lg
-                    i.fa.fa-ellipsis-v.fa-1g
-            .chat-texts 
-            .text-area 
-                input.message(type="text" placeholder="Type message here")    
-                .send-message   
-                    i.fa.fa-paper-plane.send
+            .chat-room
+                .dashboard 
+                    i.fa.fa-bars.hamburger.active-bars.fa-lg 
+                    img.users-profile(src=`./assets/${user.photo}`, alt="")
+                    .user-name-area 
+                        p.name Abdulhamid
+                        p.time 2:58 PM
+                    .peripherals 
+                        i.fa.fa-search.fa-lg
+                        i.fa.fa-ellipsis-v.fa-1g
+                .chat-texts 
+                .text-area 
+                    input.message(type="text" placeholder="Type message here")    
+                    .send-message   
+                        i.fa.fa-paper-plane.send

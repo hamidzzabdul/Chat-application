@@ -1,3 +1,5 @@
+const multer = require('multer')
+const path = require('path')
 const User = require('../models/UserModel')
 
 exports.getAllusers= async(req, res, next)=>{

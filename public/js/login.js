@@ -1,44 +1,45 @@
 import axios from 'axios'
 
-export const signUp = async(email, password, passwordConfirm)=>{
+export const signUp = async(name, email, password, passwordConfirm)=>{
     try{
         const res = await axios({
             method: 'POST',
-            url: 'api/v1/user/register',
+            url: 'api/v1/users/register',
             data:{
+                name,
                 email,
                 password,
                 passwordConfirm
             }
         })
-        if(res.data.status === 'success'){
+        if(res.data.status === 'Success'){
             window.setTimeout(()=> {
                 location.assign('/')
             }, 1500)
         }
 
     }catch(err){
-        alert(`${err.response.data.message}`)
+        alert(`${err.message}`)
     }
 }
 export const login = async(email, password)=>{
     try{
         const res = await axios({
             method: 'POST',
-            url: 'api/v1/user/login',
+            url: 'api/v1/users/login',
             data:{
                 email,
                 password
             }
         })
-        if(res.data.status === 'success'){
+        if(res.data.status === 'Success'){
             window.setTimeout(()=> {
                 location.assign('/')
             }, 1500)
         }
 
     }catch(err){
-        alert(`${err.response.data.message}`)
+        alert(`${err}`)
     }
 }
 
@@ -46,10 +47,14 @@ export const logout = async()=>{
     try {
         const res = await axios({
             method: 'GET',
-            url: 'api/v1/user/logout'
+            url: 'api/v1/users/logout'
         })
-        if(res.data.status === 'success') location.reload(true)
+        if(res.data.status === 'Success'){
+            window.setTimeout(()=> {
+                location.assign('/login')
+            }, 1500)
+        }
     } catch (error) {
-        alert(`${error.response.data.message}`)
+        alert(`${error.message}`)
     }
 }

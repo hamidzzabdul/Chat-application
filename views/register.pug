@@ -8,8 +8,11 @@ block content
                 a.register(href="/login") Login
 
         .signUp-wrapper 
-            form.form-control.form-sign-up(method="POST")
+            form.form-control.form-sign-up(action='/register' method='POST' enctype='multipart/form-data')
                 p Sign-Up
+                .username
+                    i.fa.fa-user.avatar 
+                    input#name(type="text" placeholder="Enter name" required)
                 .username
                     i.fa.fa-user.avatar 
                     input#email(type="email" placeholder="you@example.com" required)
@@ -19,6 +22,9 @@ block content
                 .password
                     i.fa.fa-unlock-alt  
                     input#passwordConfirm(type="password" placeholder="Retype-password" required)
+                .password
+                    label(for="photos") Enter profile pic
+                    input#photos.upload(type="file" name="photo")
                 a.log-in(href="/login") Alreade have an account! Login 
                 button.signUp-btn Sign Up
         

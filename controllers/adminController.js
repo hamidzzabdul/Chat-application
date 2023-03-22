@@ -91,9 +91,8 @@ exports.protect = async(req, res, next)=>{
     }
 
     if(!token){
-        return res.status(401).json({
-            status: 'fail',
-            message: 'You are not logged in! please log in to get access'
+        return res.status(401).render('login',{
+            
         })
     }
 
@@ -129,18 +128,19 @@ exports.isLoggedIn = async(req, res, next)=> {
             // check if user still exists
             const currentUser = await User.findById(decoded.id)
             if(!currentUser){
-                return next()
+                return next() 
             }
             // 3 check if user changed password
 
             // Theres is a logged in user
-            res.local.user = currentUser
+            res.locals.user = currentUser
             return next()
         } catch (error) {
             return next()
         }
     }
-}
+    next()
+};
 
 exports.restrictTo = (...roles)=> {
     return(req, res, next)=>{
